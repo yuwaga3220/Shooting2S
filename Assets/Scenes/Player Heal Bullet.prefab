@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5246811238226968033}
   - component: {fileID: 2704548510618997250}
   - component: {fileID: 1250381466051666343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Heal Bullet
   m_TagString: PlayerHealBullet
   m_Icon: {fileID: 0}
@@ -165,8 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e3f6dee301277438276b056644480b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 1
+  damageAmount: 3
   passThroughTags:
-  - PlayerBullet
-  - EnemyBullet
-  - TankBullet
+  - Enemy

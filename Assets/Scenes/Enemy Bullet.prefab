@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -20718656205570655}
   - component: {fileID: 7702089537786730201}
   - component: {fileID: -8155075387988757579}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy Bullet
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
@@ -167,8 +167,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 1
   passThroughTags:
-  - PlayerBullet
-  - PlayerHealBullet
-  - TankBullet
   - Enemy
-  - EnemyBullet

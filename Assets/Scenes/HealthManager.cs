@@ -11,7 +11,7 @@ public class HealthManager : MonoBehaviour
     private float currentHealth;
 
     [Header("Tag Settings")]
-    
+
     // 変数名を変更: ダメージを受ける弾のタグ
     [SerializeField]
     [Tooltip("衝突するとダメージを受けるタグ一覧")]
@@ -33,7 +33,7 @@ public class HealthManager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         string targetTag = collision.gameObject.tag;
-        
+
         // 相手のオブジェクトから BulletStatus スクリプトを取得
         BulletStatus bullet = collision.gameObject.GetComponent<BulletStatus>();
 
@@ -65,7 +65,6 @@ public class HealthManager : MonoBehaviour
             currentHealth = 0;
             Die();
         }
-        
         UpdateHealthBar(); // バー更新
     }
 

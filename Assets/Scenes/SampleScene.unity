@@ -179,7 +179,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.34901962, g: 0.4117647, b: 0.4117647, a: 1}
   m_FlipX: 0
@@ -450,7 +450,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!224 &419688833
 RectTransform:
@@ -740,7 +740,7 @@ GameObject:
   - component: {fileID: 853198266}
   - component: {fileID: 853198267}
   - component: {fileID: 853198268}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tank
   m_TagString: Tank
   m_Icon: {fileID: 0}
@@ -812,7 +812,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.01, y: -1.48, z: 0}
-  m_LocalScale: {x: 0.9876572, y: 0.84631777, z: 0.84631777}
+  m_LocalScale: {x: 1.1971393, y: 1.0258218, z: 1.0258218}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -857,7 +857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarSlider: {fileID: 268621266}
-  maxHealth: 30
+  maxHealth: 50
   damageBulletTags:
   - EnemyBullet
   healBulletTags:
@@ -1028,7 +1028,8 @@ GameObject:
   - component: {fileID: 1153312623}
   - component: {fileID: 1153312622}
   - component: {fileID: 1153312624}
-  m_Layer: 0
+  - component: {fileID: 1153312625}
+  m_Layer: 8
   m_Name: DestroyZone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1135,7 +1136,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -1151,6 +1152,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1153312625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153312621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd4cf41d1ece94347b8ac615e16dc56a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1167418467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,7 +1316,7 @@ GameObject:
   - component: {fileID: 1441420946}
   - component: {fileID: 1441420947}
   - component: {fileID: 1441420948}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1451,7 +1464,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6281867, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &1441420946
 MonoBehaviour:
@@ -1466,6 +1479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  screenBounds: {x: 2.9, y: 5}
 --- !u!114 &1441420947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1511,7 +1525,8 @@ GameObject:
   - component: {fileID: 1630099874}
   - component: {fileID: 1630099873}
   - component: {fileID: 1630099875}
-  m_Layer: 0
+  - component: {fileID: 1630099876}
+  m_Layer: 8
   m_Name: DestroyZone1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1618,7 +1633,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -1634,6 +1649,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1630099876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630099872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd4cf41d1ece94347b8ac615e16dc56a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1641757678
 GameObject:
   m_ObjectHideFlags: 0
@@ -2010,7 +2037,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.34901962, g: 0.4117647, b: 0.4117647, a: 1}
   m_FlipX: 0
@@ -2085,7 +2112,8 @@ GameObject:
   - component: {fileID: 1966669009}
   - component: {fileID: 1966669010}
   - component: {fileID: 1966669011}
-  m_Layer: 0
+  - component: {fileID: 1966669012}
+  m_Layer: 8
   m_Name: DestroyZone3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2192,7 +2220,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -2208,6 +2236,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1966669012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966669008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd4cf41d1ece94347b8ac615e16dc56a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2030725420
 GameObject:
   m_ObjectHideFlags: 0
@@ -2341,7 +2381,8 @@ GameObject:
   - component: {fileID: 2125400074}
   - component: {fileID: 2125400075}
   - component: {fileID: 2125400076}
-  m_Layer: 0
+  - component: {fileID: 2125400077}
+  m_Layer: 8
   m_Name: DestroyZone4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2448,7 +2489,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -2464,6 +2505,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2125400077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125400073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd4cf41d1ece94347b8ac615e16dc56a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2146150481
 GameObject:
   m_ObjectHideFlags: 0
