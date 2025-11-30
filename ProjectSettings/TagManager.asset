@@ -10,6 +10,7 @@ TagManager:
   - PlayerHealBullet
   - EnemyBullet
   - TankBullet
+  - TankShield
   layers:
   - Default
   - TransparentFX

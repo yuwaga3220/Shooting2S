@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9136877995328561637}
   - component: {fileID: 7983747433922079931}
   m_Layer: 9
-  m_Name: Enemy
+  m_Name: Enemy2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,5 +171,5 @@ MonoBehaviour:
   fireInterval: 0.8
   bulletSpeed: 3
   spawnOffset: 0.2
-  bulletCount: 5
+  bulletCount: 3
   spreadAngle: 60

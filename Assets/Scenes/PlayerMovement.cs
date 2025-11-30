@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     // カメラのワールド座標での境界値を格納する変数
     [Tooltip("境界までの距離を設定します。")]
-    public Vector2 screenBounds = new Vector2(3.0f, 5.6f);
+    private Vector2 screenBounds = new Vector2(5.5f, 5.6f);
     private float playerWidth;
     private float playerHeight;
 
