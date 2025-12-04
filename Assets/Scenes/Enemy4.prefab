@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5936433934339594933}
   - component: {fileID: 7053275919332337009}
+  - component: {fileID: 7989788775881121056}
   - component: {fileID: 7720507646007412847}
   - component: {fileID: 9136877995328561637}
   - component: {fileID: 7983747433922079931}
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 8414478535512612329, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -90,6 +91,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &7989788775881121056
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644086738956426066}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &7720507646007412847
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -171,5 +199,5 @@ MonoBehaviour:
   fireInterval: 0.8
   bulletSpeed: 3
   spawnOffset: 0.2
-  bulletCount: 5
-  spreadAngle: 60
+  bulletCount: 16
+  spreadAngle: 160

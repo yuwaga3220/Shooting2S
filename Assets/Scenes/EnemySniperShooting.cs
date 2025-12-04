@@ -24,7 +24,7 @@ public class EnemySniperShooting : MonoBehaviour
         fireTimer = fireInterval;
 
         // シーン内からタンクを探してターゲットにする
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Tank");
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
         {
             target = playerObj.transform;
@@ -36,7 +36,7 @@ public class EnemySniperShooting : MonoBehaviour
         // ターゲットが見つかっていない場合、再検索を試みる（復活時など用）
         if (target == null)
         {
-            GameObject playerObj = GameObject.FindGameObjectWithTag("Tank");
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
             if (playerObj != null) target = playerObj.transform;
         }
 
