@@ -101,6 +101,9 @@ public class PlayerShooting : MonoBehaviour
     /// 弾丸を発射する
     /// </summary>
     /// <param name="bulletPrefab">発射する弾丸のPrefab</param>
+    /// <summary>
+    /// 自身の向いている方向に弾丸を発射する
+    /// </summary>
     private void Shoot(GameObject bulletPrefab)
     {
         if (bulletPrefab == null)
@@ -109,23 +112,20 @@ public class PlayerShooting : MonoBehaviour
             return;
         }
 
-        // 弾の生成位置を設定
-        Transform spawnPoint = firePoint != null ? firePoint : transform; // firePointがnullならtransformを使用
+        // 発射口（firePoint）が設定されていればそれを、なければ自分の位置を使う
+        Transform origin = firePoint != null ? firePoint : transform;
 
-        // マウスカーソルのワールド座標を取得（2D用、新しいInput Systemを使用）
-        Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
-        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPos.x, mouseScreenPos.y, Camera.main.nearClipPlane));
-        mouseWorldPos.z = 0f; // 2DなのでZ座標を0に
+        // マウス座標を計算せず、現在向いている方向（transform.up）をそのまま使用する
+        // ※2DのTopDownゲームでは、通常Y軸（緑の矢印）が「正面」として扱われます
+        Vector3 direction = origin.up;
 
-        // 発射位置からマウスカーソルへの方向を計算
-        Vector2 direction = (mouseWorldPos - spawnPoint.position).normalized;
+        // 弾の回転も、発射口の回転（＝プレイヤーの回転）をそのまま適用する
+        Quaternion rotation = origin.rotation;
 
-        // 方向から回転を計算
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f; // -90度は上向きにするため
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        // 生成位置の計算
+        Vector3 spawnPosition = origin.position + (direction * spawnOffset);
 
         // 弾の生成
-        Vector3 spawnPosition = spawnPoint.position + (Vector3)(direction * spawnOffset);
         GameObject bullet = Instantiate(bulletPrefab, spawnPosition, rotation);
 
         // 弾の速度を設定
