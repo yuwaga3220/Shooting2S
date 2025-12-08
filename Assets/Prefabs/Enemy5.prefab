@@ -180,7 +180,6 @@ MonoBehaviour:
   maxHealth: 15
   damageBulletTags:
   - PlayerBullet
-  - TankBullet
   healBulletTags: []
 --- !u!114 &7983747433922079931
 MonoBehaviour:
