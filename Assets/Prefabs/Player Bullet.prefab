@@ -167,5 +167,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 1
   passThroughTags:
-  - Tank
   - TankShield

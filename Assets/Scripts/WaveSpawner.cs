@@ -22,7 +22,7 @@ public class WaveSpawner : MonoBehaviour
     {
         [Tooltip("インスペクタでの識別用")]
         public string subWaveName = "Sub Wave";
-        public float interval = 0.5f;    
+        public float interval = 0.5f;
         public List<SpawnEntry> spawnList;
     }
 
@@ -44,6 +44,9 @@ public class WaveSpawner : MonoBehaviour
 
     [Header("ステージ構成")]
     public List<BigWaveData> stageBigWaves = new List<BigWaveData>();
+
+    [Header("クリア時の設定")]
+    [SerializeField] private GameObject clearPanel;
 
     void Start()
     {
@@ -84,7 +87,7 @@ public class WaveSpawner : MonoBehaviour
                     {
                         Debug.LogWarning($"PrefabまたはSpawnPointが設定されていません: {subWave.subWaveName}");
                     }
-                    
+
                     yield return new WaitForSeconds(subWave.interval);
                 }
 
@@ -102,6 +105,12 @@ public class WaveSpawner : MonoBehaviour
         }
 
         Debug.Log("--- 全ステージクリア ---");
+        if (clearPanel != null)
+        {
+            clearPanel.SetActive(true);
+            Time.timeScale = 0f; // ゲームを停止
+        }
+
     }
 
     // === ギズモ表示 ===

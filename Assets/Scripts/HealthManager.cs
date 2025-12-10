@@ -22,11 +22,23 @@ public class HealthManager : MonoBehaviour
     [Tooltip("衝突すると回復するタグ一覧")]
     private string[] healBulletTags;
 
+    [Header("死亡時の設定")]
+    [Tooltip("体力が0になった時に表示するパネル（ゲームオーバー画面など）")]
+    [SerializeField] private GameObject deathPanel;
+
+    [Header("UI連携")] // ★追加
+    [SerializeField] private PlayerHealthUI healthUI; // ★追加
+
     void Start()
     {
         // 初期化処理
         currentHealth = maxHealth;
         UpdateHealthBar();
+
+        if (healthUI != null)
+        {
+            healthUI.InitializeHearts((int)maxHealth); // 最大体力分のハートを生成
+        }
     }
 
     // 衝突判定
@@ -59,6 +71,11 @@ public class HealthManager : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+
+        if (healthUI != null)
+        {
+            healthUI.UpdateHearts((int)currentHealth, (int)maxHealth); // ハート表示を更新
+        }
 
         if (currentHealth <= 0)
         {
@@ -96,6 +113,12 @@ public class HealthManager : MonoBehaviour
     {
         Debug.Log(gameObject.name + " dead.");
         Destroy(gameObject);
+
+        if (deathPanel != null)
+        {
+            deathPanel.SetActive(true);
+            Time.timeScale = 0f; // ゲームを停止
+        }
     }
 
     // 指定したタグがリストに含まれているかチェックする汎用関数
